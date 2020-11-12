@@ -10,6 +10,10 @@ jobs:
       PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
     steps:  
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
       - name: sync lxk0301-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
